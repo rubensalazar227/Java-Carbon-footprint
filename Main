@@ -1,0 +1,32 @@
+/*CarbonFootprintInterfaceTest.java: testing the interface*/
+    import java.util.ArrayList;
+    import javax.swing.JOptionPane;
+    import javax.swing.JFrame;
+    import javax.swing.JOptionPane;
+    import javafx.application.Application;
+    import javafx.scene.Scene;
+    import javafx.stage.Stage;
+
+    public class CarbonFootprintInterfaceTest extends Application {
+  @Override // Override the start method in the Application class
+  public void start(Stage primaryStage) {
+        
+           CarbonFootprint[] objects = new CarbonFootprint[3];
+
+                objects[0] = (CarbonFootprint) new Bike(200.00);
+                objects[1] = (CarbonFootprint) new Building(4000.52);
+                objects[2] = (CarbonFootprint) new Car(5845.25, 20.5);
+                
+                JOptionPane.showMessageDialog(null, " Data of each object:\n " + objects.getClass());
+          
+                for (CarbonFootprint currentObject : objects) {
+                System.out.printf("\n%s: %s \n%s %s: %.2f\n",
+                            "Details for ", currentObject.getClass().getName(),
+                            currentObject.toString(),
+                            "Carbon footprint is ", currentObject.getCarbonFootprint());
+                
+  
+                }
+             }
+          }
+        
