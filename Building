@@ -1,0 +1,25 @@
+/*Building.java: Building class*/
+    public class Building implements CarbonFootprint{
+        private double averageMonthlyKwh;
+        private final int months = 12;
+        //private double carbonFootprint;
+        //constructor
+        public Building( double monthlyConsumption ){
+            averageMonthlyKwh = monthlyConsumption;
+        }//end of constructor
+        private void setAverageMonthlyKwh( double monthlyConsumption ){
+            averageMonthlyKwh = monthlyConsumption;
+        }
+        private double getAverageMonthlyKwh(){
+            return averageMonthlyKwh;
+        }
+        @Override 
+        public String toString(){
+            return String.format("%s: %.2f\n", 
+            "the monthly consumption is ", getAverageMonthlyKwh() );
+        }
+        @Override
+        public double getCarbonFootprint(){
+            return getAverageMonthlyKwh() * months;
+        }
+    }//end of Building class
